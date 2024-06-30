@@ -1,0 +1,2 @@
+SELECT FROM covert.pcap INTO extract USEKEY key IF IP[0] DO IP[3] ELSE UDP[5];
+
