@@ -11,6 +11,11 @@
 - `make clean` 刪除 `make` 生成的檔案。
 
 ## GRAMMAR
+### HELP
+- `HELP ; (HELP * ;)`
+- `HELP DEF;`
+- `HELP SELECT;`
+- `HELP INJECT;`
 ### Steganography
 - `INJECT message INTO in.pcap USEKEY key PROTO proto[start:size] OUT out.pcap;`
 - `INJECT message INTO in.pcap USEKEY key PROTO proto[start:size];`
