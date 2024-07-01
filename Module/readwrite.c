@@ -104,7 +104,6 @@ int write_pcap(const char *infile, const char *outfile, int protocol, int start,
         return 1;
     }
     pcap_t *pacp_out = pcap_open_dead(DLT_EN10MB, MAX_PACKET_SIZE);
-    // 開啟空的pcap_t 結構
     pcap_dumper_t *dumper = pcap_dump_open(pacp_out, outfile);
 
     for (int j = 0; j < (data_size / size); j++) {
