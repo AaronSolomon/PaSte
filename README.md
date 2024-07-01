@@ -50,5 +50,5 @@
     - `INJECT message INTO in.pcap USEKEY key PROTO UDP[7:3] OUT out.pcap;`
 - Chi Square Analysis:
     - `ANALYSIS_CS OF analysis.pcap PROTO IP[7:1];`
-- RS Analysis:
+- Rescaled Range Analysis:
     - `ANALYSIS_RS OF analysis.pcap PROTO IP[7:3];`
