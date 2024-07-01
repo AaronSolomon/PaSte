@@ -54,7 +54,7 @@ void chi_square_analysis_of_file(char* infile, int protocol, int start, int size
     read_pcap(infile, protocol, start, size, &data, &data_size);
 
     /* Analysis */
-    double result = chi_square_analysis(data, size, data_size / start);
+    double result = chi_square_analysis(data, size, data_size / size);
     
     /* Output */
     printf("%f\n", result);
@@ -74,7 +74,7 @@ void rescaled_range_analysis_of_file(char* infile, int protocol, int start, int 
     read_pcap(infile, protocol, start, size, &data, &data_size);
 
     /* Analysis */
-    double result = chi_square_analysis(data, size, data_size / start);
+    double result = chi_square_analysis(data, size, data_size / size);
     
     /* Output */
     printf("%f\n", result);
@@ -181,5 +181,20 @@ void help(int type){
         puts("\t\e[4msize\e[0m");
         puts("\t\tThe number of bytes of the \e[4mproto\e[0m header.");
     }
+        puts("");
+
+        /* Test */
+        puts("EXAMPLE");
+        puts("Extract:");
+        puts("\tSELECT FROM \e[4mcovert.pcap\e[0m INTO \e[4mextract\e[0m USEKEY \e[4mkey\e[0m PROTO \e[4mIP[7:3]\e[0m;");
+
+        puts("Inject:");
+        puts("\tINJECT \e[4mmessage\e[0m INTO \e[4min.pcap\e[0m USEKEY \e[4mkey\e[0m PROTO \e[4mUDP[7:3]\e[0m OUT \e[4mout.pcap\e[0m;");
+        puts("Chi Square Analysis:");
+        puts("\tANALYSIS_CS OF \e[4manalysis.pcap\e[0m PROTO \e[4mIP[7:1]\e[0m;");
+
+
+        puts("RS Analysis:");
+        puts("\tANALYSIS_RS OF \e[4manalysis.pcap\e[0m PROTO \e[4mIP[7:3]\e[0m;");
         puts("");
 }
