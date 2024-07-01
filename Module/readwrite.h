@@ -23,4 +23,4 @@ int read_pcap(const char *filename, int protocol, int start, int size, char **da
 /// @param data data to write
 /// @param data_size data size
 /// @return
-int write_pacp(const char *infile, const char *outfile, int protocol, int start, int size, char *data, int data_size);
+int write_pcap(const char *infile, const char *outfile, int protocol, int start, int size, char *data, int data_size);
